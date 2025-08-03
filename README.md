@@ -95,8 +95,8 @@ springboot/
 
 The application uses MySQL database with the following default configuration:
 - Database: `spring-boot-demo`
-- Username: `vinu`
-- Password: `123`
+- Username: `****`
+- Password: `***`
 - Port: `3306`
 
 Update `src/main/resources/application.properties` to change these settings.
