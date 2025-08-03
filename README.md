@@ -43,7 +43,7 @@ The application will start on `http://localhost:8080`
 
 The application provides interactive API documentation using Swagger UI:
 
-![Swagger API Documentation](demoapp\src\images\Screenshot 2025-08-03 104353.png)
+![Swagger API Documentation](./images/Screenshot 2025-08-03 104353.png)
 
 ### Available Endpoints
 - `GET /api/users` - Get all users
