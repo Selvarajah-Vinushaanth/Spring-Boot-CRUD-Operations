@@ -39,39 +39,46 @@ Run the application:
 
 The application will start on `http://localhost:8080`
 
-## API Endpoints
+## API Documentation
 
-### User Management
+The application provides interactive API documentation using Swagger UI:
+
+![Swagger API Documentation](demoapp\src\images\Screenshot 2025-08-03 104353.png)
+
+### Available Endpoints
 - `GET /api/users` - Get all users
 - `GET /api/users/{id}` - Get user by ID
 - `POST /api/users` - Create a new user
 - `PUT /api/users/{id}` - Update user by ID
 - `DELETE /api/users/{id}` - Delete user by ID
 
-### API Documentation
+### Access API Documentation
 - Swagger UI: `http://localhost:8080/swagger-ui.html`
 - OpenAPI JSON: `http://localhost:8080/v3/api-docs`
 
 ## Project Structure
 
 ```
-demoapp/
-├── src/
-│   ├── main/
-│   │   ├── java/com/vinu/demoapp/
-│   │   │   ├── controllers/        # REST controllers
-│   │   │   ├── entity/            # JPA entities
-│   │   │   ├── exceptions/        # Custom exceptions
-│   │   │   ├── model/            # Data models
-│   │   │   ├── repository/       # JPA repositories
-│   │   │   └── DemoappApplication.java
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-├── target/                       # Build output
-├── .mvn/wrapper/                # Maven wrapper
-├── pom.xml                      # Maven configuration
-└── README.md
+springboot/
+├── demoapp/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/vinu/demoapp/
+│   │   │   │   ├── controllers/        # REST controllers
+│   │   │   │   ├── entity/            # JPA entities
+│   │   │   │   ├── exceptions/        # Custom exceptions
+│   │   │   │   ├── model/            # Data models
+│   │   │   │   ├── repository/       # JPA repositories
+│   │   │   │   └── DemoappApplication.java
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   └── test/
+│   ├── target/                       # Build output
+│   ├── .mvn/wrapper/                # Maven wrapper
+│   ├── pom.xml                      # Maven configuration
+│   └── README.md
+└── images/                          # Documentation images
+    └── swagger-api-docs.png
 ```
 
 ## Features
@@ -79,7 +86,7 @@ demoapp/
 - RESTful API for user management
 - MySQL database integration with JPA/Hibernate
 - Custom exception handling
-- API documentation with Swagger/OpenAPI
+- Interactive API documentation with Swagger/OpenAPI
 - Maven build system
 - Spring Boot DevTools for development
 
@@ -87,11 +94,42 @@ demoapp/
 
 The application uses MySQL database with the following default configuration:
 - Database: `spring-boot-demo`
-- Username: `****`
-- Password: `****`
+- Username: `vinu`
+- Password: `123`
 - Port: `3306`
 
 Update `src/main/resources/application.properties` to change these settings.
+
+## Sample API Requests
+
+### Create a User
+```bash
+curl -X POST http://localhost:8080/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John Doe", "email": "john@example.com"}'
+```
+
+### Get All Users
+```bash
+curl -X GET http://localhost:8080/api/users
+```
+
+### Get User by ID
+```bash
+curl -X GET http://localhost:8080/api/users/1
+```
+
+### Update User
+```bash
+curl -X PUT http://localhost:8080/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Jane Doe", "email": "jane@example.com"}'
+```
+
+### Delete User
+```bash
+curl -X DELETE http://localhost:8080/api/users/1
+```
 
 ## Contributing
 
